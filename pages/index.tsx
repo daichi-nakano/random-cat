@@ -10,12 +10,12 @@ type Props = {
 const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
   const [imageUrl, setImageUrl] = useState(initialImageUrl);
   const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    fetchImage().then((newImage) => {
-      setImageUrl(newImage.url);
-      setLoading(false);
-    });
-  }, []);
+  // useEffect(() => {
+  //     fetchImage().then((newImage) => {
+  //     setImageUrl(newImage.url);
+  //     setLoading(false);
+  //     });
+  // }, []);
   //ボタンをクリックしたときに画像を読み込む処理を書く
   const handleClick = async () => {
     setLoading(true);
@@ -26,7 +26,7 @@ const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
   return (
     <div className={styles.page}>
       <button onClick={handleClick} className={styles.button}>
-        他のニャンコも見る
+        One more cat!
       </button>
       <div className={styles.frame}>
         {loading || <img src={imageUrl} className={styles.img} />}
